@@ -79,5 +79,18 @@ class Modelo_Usuario
         }
     }
 
+    function TraerDatos($usuario)
+    {
+        $sql = "call VERIFICAR_USUARIO('$usuario')";
+        $arreglo = array();
+        if ($consulta = $this->conexion->conexion->query($sql)) {
+            while ($consulta_VU = mysqli_fetch_array($consulta)) {
+                $arreglo[] = $consulta_VU;
+            }
+            $this->conexion->cerrar();
+            return $arreglo;
+        }
+    }
+
 }
 ?>
