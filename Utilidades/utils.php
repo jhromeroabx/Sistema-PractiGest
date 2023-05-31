@@ -1,5 +1,5 @@
 <?php
-# Limpiar cadenas de texto #
+# Limpiar cadenas de texto EVITA QUE SE EJECUTE INSTRUCCIONES SQL
 function limpiar_cadena($cadena)
 {
     $cadena = trim($cadena);
